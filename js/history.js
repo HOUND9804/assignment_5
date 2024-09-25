@@ -1,4 +1,4 @@
-const selfBalance = document.getElementById('balance');
+        const selfBalance = document.getElementById('balance');
         const donationHistoryList = document.getElementById('donation_history');
         const historySection = document.getElementById('history_section');
         let donationHistory = []; // Array to store donation records
@@ -6,10 +6,9 @@ const selfBalance = document.getElementById('balance');
         function processDonation(inputField, amountField, donationType) {
             const donationInput = document.getElementById(inputField);
             const donationAmount = parseFloat(donationInput.value);
-
-            if (donationAmount > 0&&donationAmount<=selfBalance) {
+            const currentBalance = parseFloat(selfBalance.textContent);
+            if (donationAmount > 0 && donationAmount<=currentBalance) {
                 // Update balance and donation amount
-                const currentBalance = parseFloat(selfBalance.textContent);
                 selfBalance.textContent = (currentBalance - donationAmount).toFixed(2) + ' BDT';
 
                 const amountElement = document.getElementById(amountField);
@@ -20,18 +19,17 @@ const selfBalance = document.getElementById('balance');
                 donationHistory.push({
                     type: donationType,
                     amount: donationAmount,
-                    time: now.toLocaleString() // Store formatted date and time
+                    time: now.toLocaleString() 
                 });
                 updateDonationHistory();
 
-                // Show success modal
+                
                 document.getElementById('my_modal_success').showModal();
             } else {
-                // Show failure modal
+             
                 document.getElementById('my_modal_failure').showModal();
             }
 
-            // Clear input field
             donationInput.value = '';
         }
 
