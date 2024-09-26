@@ -10,10 +10,10 @@
 
 </head>
 <body>
-    <header>
+    <header class="sticky top-0 bg-white shadow">
         <section class="p-3">
             <nav class="flex justify-between mt-5">
-                <div class="">
+                <div id="blog">
                     <button class="btn bg-green-300">Blog</button>
                 </div>
                 <div class="flex justify-center items-center gap-2">
@@ -33,7 +33,11 @@
             <button id="donation_btn" class="btn bg-green-300">Donation</button>
             <button id="history_btn" class="btn bg-white">History</button>
         </section>
-        <section class="flex flex-col cards mt-10 mb-10 gap-5">
+        <section class="hidden mt-10 history_section">
+            <h2 class="text-2xl font-bold text-center">Donation History</h2>
+            <ul id="donation_history" class="list-disc p-5"></ul>
+        </section>
+        <section class=" flex flex-col cards mt-10 mb-10 gap-5">
             <div class="max-w-[1060 px] mx-auto flex flex-col gap-3  p-5 md:flex-row border-solid border-gray-300 rounded">
                 <img src="assets/noakhali.png" alt="" class="">
                 <div class="flex flex-col items-start justify-between">
@@ -68,7 +72,7 @@
                 <img src="assets/quota-protest.png" alt="" class="">
                 <div class="flex flex-col items-start justify-between">
                     <div class="flex justify-start">
-                        <h1 id="studedent_amount">0 BDT</h1>
+                        <h1 id="student_amount">0 BDT</h1>
                         <img src="assets/coin.png" alt="">
                     </div>
                     <h1 class="font-bold text-2xl">Aid for Injured in the Quota Movement</h1>
@@ -79,10 +83,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="history_section" class="hidden mt-10"></section>
-            <h2 class="text-2xl font-bold text-center">Donation History</h2>
-            <ul id="donation_history" class="list-disc p-5"></ul>
         </section>
     </main>
     <!-- Success Modal -->
